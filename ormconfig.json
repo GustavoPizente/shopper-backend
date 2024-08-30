@@ -1,0 +1,14 @@
+{
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "username": "root",
+    "password": "279413",
+    "database": "Shopper",
+    "entities": [
+      "src/measures/measure.entity.ts"
+    ],
+    "synchronize": true,
+    "logging": true
+  }
+  
