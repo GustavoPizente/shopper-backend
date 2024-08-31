@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Param, Query } from '@nestjs/common';
+import { Controller, Post,Patch,BadRequestException, Body, Get, Param, Query } from '@nestjs/common';
 import { MeasuresService } from './measures.service';
 
 @Controller('measures')
@@ -12,8 +12,11 @@ export class MeasuresController {
     @Body('measure_datetime') measureDatetime: string,
     @Body('measure_type') measureType: string,
   ) {
+
+    //envia os parâmetros para o método ProcessImage e retorna em results
     const result = await this.measuresService.processImage(image, customerCode, measureDatetime, measureType);
     return result;
+
   }
 
   @Get(':customer_code/list')
@@ -33,4 +36,17 @@ export class MeasuresController {
       })),
     };
   }
+
+ 
+
+
+
+
+
+
 }
+
+
+
+
+
